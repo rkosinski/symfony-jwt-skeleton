@@ -3,6 +3,16 @@ api_v1:
     type:     annotation
     prefix:   /api/v1/
 
+fos_user_registration_check_email:
+    controller: "fos_user.registration.controller:checkEmailAction"
+    methods: GET
+    path: /api/v1/registration/check-email
+
+fos_user_registration_confirm:
+    controller: "fos_user.registration.controller:confirmAction"
+    methods: GET
+    path: /api/v1/registration/confirm/{token}
+
 nelmio_api_doc:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /api/v1/doc

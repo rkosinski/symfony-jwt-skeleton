@@ -95,7 +95,7 @@ class RegistrationControllerTest extends WebTestCase
     private function makeRequest(array $data) : Client
     {
         $client = static::createClient();
-        $client->request(Request::METHOD_POST, '/api/v1/anonymous/register', [], [], ['CONTENT_TYPE' => 'application/json'], json_encode($data));
+        $client->request(Request::METHOD_POST, '/api/v1/register', [], [], ['CONTENT_TYPE' => 'application/json'], json_encode($data));
 
         return $client;
     }
