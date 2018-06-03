@@ -4,6 +4,7 @@ namespace tests\AppBundle\Controller;
 
 use AppBundle\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Registry;
+use Symfony\Bundle\FrameworkBundle\Client;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -22,9 +23,8 @@ class RegistrationControllerTest extends WebTestCase
 
     /**
      * @dataProvider userValidProvider
-     * @param [] $data
      */
-    public function testRegisterAction($data)
+    public function testRegisterAction(array $data)
     {
         $this->removeTestValues($data['email']);
 
@@ -34,9 +34,8 @@ class RegistrationControllerTest extends WebTestCase
 
     /**
      * @dataProvider userValidProvider
-     * @param [] $data
      */
-    public function testRegisterActionWithSameEmail($data)
+    public function testRegisterActionWithSameEmail(array $data)
     {
         $client = $this->makeRequest($data);
         $this->assertEquals(400, $client->getResponse()->getStatusCode());
@@ -44,18 +43,14 @@ class RegistrationControllerTest extends WebTestCase
 
     /**
      * @dataProvider userInvalidProvider
-     * @param [] $data
      */
-    public function testRegisterActionWithInvalidData($data)
+    public function testRegisterActionWithInvalidData(array $data)
     {
         $client = $this->makeRequest($data);
         $this->assertEquals(400, $client->getResponse()->getStatusCode());
     }
 
-    /**
-     * @return array
-     */
-    public function userValidProvider()
+    public function userValidProvider() : array
     {
         return [
             [
@@ -68,10 +63,7 @@ class RegistrationControllerTest extends WebTestCase
         ];
     }
 
-    /**
-     * @return array
-     */
-    public function userInvalidProvider()
+    public function userInvalidProvider() : array
     {
         return [
             [
@@ -91,10 +83,7 @@ class RegistrationControllerTest extends WebTestCase
         ];
     }
 
-    /**
-     * @param string $email
-     */
-    private function removeTestValues($email)
+    private function removeTestValues(string $email)
     {
         $user = self::$doctrine->getRepository(User::class)->findOneBy(['email' => $email]);
         if (null !== $user) {
@@ -103,11 +92,7 @@ class RegistrationControllerTest extends WebTestCase
         }
     }
 
-    /**
-     * @param [] $data
-     * @return \Symfony\Bundle\FrameworkBundle\Client
-     */
-    private function makeRequest($data)
+    private function makeRequest(array $data) : Client
     {
         $client = static::createClient();
         $client->request(Request::METHOD_POST, '/api/v1/anonymous/register', [], [], ['CONTENT_TYPE' => 'application/json'], json_encode($data));

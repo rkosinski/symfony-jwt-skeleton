@@ -3,9 +3,6 @@ api_v1:
     type:     annotation
     prefix:   /api/v1/
 
-fos_user_register:
-    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
-
 nelmio_api_doc:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /api/v1/doc
