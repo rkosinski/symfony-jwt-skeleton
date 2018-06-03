@@ -1,0 +1,43 @@
+security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface: bcrypt
+    role_hierarchy:
+        ROLE_API:         ROLE_USER
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username_email
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        docs:
+            pattern:  ^/api/v1/doc
+            stateless: true
+            anonymous: true
+            security: false
+        login:
+            pattern:   ^/api/v1/login
+            stateless: true
+            anonymous: true
+            form_login:
+                check_path:               /api/v1/login
+                success_handler:          lexik_jwt_authentication.handler.authentication_success
+                failure_handler:          lexik_jwt_authentication.handler.authentication_failure
+                username_parameter:       email
+                password_parameter:       password
+                require_previous_session: false
+        api:
+            pattern:   ^/api/v1/authorized/
+            stateless: true
+            lexik_jwt:
+                authorization_header:
+                    enabled: true
+                    prefix:  Bearer
+                    name:    Authorization
+                query_parameter:
+                    enabled: false
+                throw_exceptions:        true
+                create_entry_point:      true
+                authentication_provider: lexik_jwt_authentication.security.authentication.provider

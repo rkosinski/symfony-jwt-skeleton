@@ -1,0 +1,15 @@
+fos_rest:
+    param_fetcher_listener: false
+    view:
+        mime_types:
+            json: ['application/json']
+        view_response_listener: 'force'
+        formats:
+            json: true
+    format_listener:
+        rules: [{ path: ^/, priorities: [ json ], fallback_format: ~, prefer_extension: true }]
+    allowed_methods_listener: true
+    access_denied_listener:
+        json: true
+    serializer:
+        serialize_null: true
