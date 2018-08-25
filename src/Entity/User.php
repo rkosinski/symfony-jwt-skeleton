@@ -11,9 +11,8 @@ class User implements UserInterface, \Serializable
     private $password;
     private $active;
 
-    public function __construct(Email $email)
+    public function __construct()
     {
-        $this->email = (string) $email;
         $this->active = true;
     }
 
