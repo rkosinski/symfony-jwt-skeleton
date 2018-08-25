@@ -10,7 +10,7 @@ framework:
         handler_id: ~
 
     templating:
-        engines: ['php']
+        engines: ['twig']
 
     #esi: true
     #fragments: true

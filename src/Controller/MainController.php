@@ -2,13 +2,13 @@
 
 namespace App\Controller;
 
-use FOS\RestBundle\Controller\FOSRestController;
-use FOS\RestBundle\View\View;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
-class MainController extends FOSRestController
+class MainController extends Controller
 {
-    public function hello(): View
+    public function hello(): Response
     {
-        return  $this->view('Hello');
+        return $this->render('main/index.html.twig');
     }
 }
