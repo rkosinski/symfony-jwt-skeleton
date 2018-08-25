@@ -36,21 +36,6 @@ class User implements UserInterface, \Serializable
         return $this->password;
     }
 
-    public function isAccountNonExpired() : bool
-    {
-        return true;
-    }
-
-    public function isAccountNonLocked() : bool
-    {
-        return true;
-    }
-
-    public function isCredentialsNonExpired() : bool
-    {
-        return true;
-    }
-
     public function isEnabled() : bool
     {
         return $this->active;
