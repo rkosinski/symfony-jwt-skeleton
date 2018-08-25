@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace AppBundle\Controller;
+namespace AppBundle\Controller\Api;
 
-use AppBundle\Utils\BaseFosRestController;
+use AppBundle\Controller\BaseFosRestController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use FOS\RestBundle\Controller\Annotations as FOS;
 use Symfony\Component\HttpFoundation\Response;

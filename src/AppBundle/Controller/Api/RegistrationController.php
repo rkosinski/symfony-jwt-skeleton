@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace AppBundle\Controller;
+namespace AppBundle\Controller\Api;
 
-use AppBundle\Utils\BaseFosRestController;
+use AppBundle\Controller\BaseFosRestController;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\HttpFoundation\Request;
 use FOS\UserBundle\Event\GetResponseUserEvent;

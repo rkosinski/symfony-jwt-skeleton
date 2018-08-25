@@ -1,5 +1,5 @@
 api_v1:
-    resource: "@AppBundle/Controller/"
+    resource: "@AppBundle/Controller/Api/"
     type:     annotation
     prefix:   /api/v1/
 
