@@ -4,7 +4,7 @@
 
     <entity name="AppBundle\Entity\User" table="users" repository-class="AppBundle\Repository\Doctrine\UserDoctrineRepository">
         <id name="id" type="integer" column="id">
-            <generator strategy="AUTO"/>
+            <generator/>
         </id>
     </entity>
 

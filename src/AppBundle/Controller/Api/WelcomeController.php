@@ -25,7 +25,7 @@ class WelcomeController extends BaseFosRestController
      * )
      * @FOS\Get("/authorized/welcome", name="api_v1_authorized_welcome")
      */
-    public function welcomeAction() : Response
+    public function welcomeAction(): Response
     {
         $loggedUser = $this->getUser();
         return $this->handleView($this->view($loggedUser->getUsername(), Response::HTTP_OK));

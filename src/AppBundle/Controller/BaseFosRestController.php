@@ -7,7 +7,7 @@ use Symfony\Component\Form\FormInterface;
 
 class BaseFosRestController extends FOSRestController
 {
-    protected function getErrorsFromForm(FormInterface $form) : array
+    protected function getErrorsFromForm(FormInterface $form): array
     {
         $errors = [];
         foreach ($form->getErrors() as $error) {

@@ -13,7 +13,7 @@ class LoginController extends BaseFosRestController
      * @ApiDoc(resource=true, description="Login route", views={"default", "authentication"})
      * @FOS\Post("/login", name="api_v1_user_login")
      */
-    public function loginAction() : Response
+    public function loginAction(): Response
     {
         return $this->forward('FOSUserBundle:Security:login');
     }

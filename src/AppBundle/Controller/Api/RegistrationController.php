@@ -17,7 +17,7 @@ class RegistrationController extends BaseFosRestController
      * @ApiDoc(resource=true, description="Registration route", views={"default", "authentication"})
      * @FOS\Post("/register", name="api_v1_user_register")
      */
-    public function registerAction(Request $request) : Response
+    public function registerAction(Request $request): Response
     {
         $userManager = $this->get('fos_user.user_manager');
         $user = $userManager->createUser();
