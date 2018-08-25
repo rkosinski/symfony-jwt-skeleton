@@ -1,0 +1,5 @@
+api:
+  type: rest
+  prefix: /api/v1/
+  name_prefix: api_v1_
+  resource: '../src/Resources/routing/api_routes.xml'
