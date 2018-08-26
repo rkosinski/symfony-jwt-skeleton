@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1>Login!</h1>
+
+        {% if error %}
+            {{ error.messageKey|trans(error.messageData, 'security') }}
+        {% endif %}
+
+        {{ form_start(form) }}
+        {{ form_row(form.username) }}
+        {{ form_row(form.password) }}
+        <button type="submit" id="login_button">Login</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -7,16 +7,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
-class MainController extends Controller
+class SecurityController extends Controller
 {
-    public function hello(): Response
-    {
-        return $this->render('main/index.html.twig');
-    }
-
     public function login(): Response
     {
-        $error = $this->get(AuthenticationUtils::class)->getLastAuthenticationError();
+        $error = $this->get('security.authentication_utils')->getLastAuthenticationError();
 
         $form = $this->createForm(LoginFormType::class);
 

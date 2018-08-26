@@ -12,8 +12,12 @@
         "sensio/framework-extra-bundle": "^5.2",
         "symfony/console": "*",
         "symfony/flex": "^1.1",
+        "symfony/form": "*",
         "symfony/framework-bundle": "*",
         "symfony/orm-pack": "^1.0",
+        "symfony/security": "*",
+        "symfony/security-bundle": "*",
+        "symfony/templating": "*",
         "symfony/twig-bundle": "*",
         "symfony/yaml": "*"
     },

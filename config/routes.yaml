@@ -1,8 +1,14 @@
 main:
     type: xml
     prefix: /
-    name_prefix: app_
+    name_prefix: main_
     resource: '../src/Resources/routing/main_routes.xml'
+
+security:
+    type: xml
+    prefix: /
+    name_prefix: security_
+    resource: '../src/Resources/routing/security_routes.xml'
 
 api:
     type: rest
