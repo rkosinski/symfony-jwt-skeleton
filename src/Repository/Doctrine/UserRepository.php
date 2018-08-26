@@ -13,4 +13,23 @@ class UserRepository extends ServiceEntityRepository implements UserRepositoryIn
     {
         parent::__construct($registry, User::class);
     }
+
+    /**
+     * @param string $email
+     * @return User|null
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function findOneByEmail(string $email): ?User
+    {
+        $result = $this->createQueryBuilder('user')
+            ->select('user')
+            ->andWhere('user.email = :email')
+            ->andWhere('user.active = :active')
+            ->setParameters(['email' => $email, 'active' => true])
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult();
+
+        return $result;
+    }
 }

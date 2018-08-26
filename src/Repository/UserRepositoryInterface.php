@@ -2,6 +2,9 @@
 
 namespace App\Repository;
 
+use App\Entity\User;
+
 interface UserRepositoryInterface
 {
+    public function findOneByEmail(string $email): ?User;
 }

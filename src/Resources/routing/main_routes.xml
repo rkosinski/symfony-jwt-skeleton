@@ -4,8 +4,8 @@
         xsi:schemaLocation="http://symfony.com/schema/routing
         http://symfony.com/schema/routing/routing-1.0.xsd">
 
-    <route id="hello" methods="GET" path="/">
-        <default key="_controller">App\Controller\MainController::hello</default>
+    <route id="index" methods="GET" path="/">
+        <default key="_controller">App\Controller\MainController::index</default>
     </route>
 
 </routes>
