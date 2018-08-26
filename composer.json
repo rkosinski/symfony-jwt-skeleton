@@ -3,7 +3,7 @@
     "license": "mit",
     "type": "project",
     "require": {
-        "php": "^7.1.3",
+        "php": "^7.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-json": "*",
@@ -22,6 +22,10 @@
         "symfony/yaml": "*"
     },
     "require-dev": {
+        "behat/behat": "^3.5",
+        "behat/mink": "^1.7",
+        "behat/mink-extension": "^2.3",
+        "behat/mink-goutte-driver": "^1.2",
         "symfony/dotenv": "*",
         "symfony/maker-bundle": "^1.6",
         "symfony/phpunit-bridge": "*",
@@ -67,8 +71,7 @@
     },
     "extra": {
         "symfony": {
-            "allow-contrib": false,
-            "require": "4.1.*"
+            "allow-contrib": false
         }
     }
 }
