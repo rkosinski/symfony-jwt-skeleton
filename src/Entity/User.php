@@ -21,6 +21,16 @@ class User implements UserInterface, \Serializable
         return $this->email;
     }
 
+    /**
+     * TODO ValueObject? Set in constructor?
+     *
+     * @param string $email
+     */
+    public function setEmail(string $email): void
+    {
+        $this->email = $email;
+    }
+
     public function getUsername() : string
     {
         return $this->email;

@@ -26,6 +26,7 @@
         "behat/mink": "^1.7",
         "behat/mink-extension": "^2.3",
         "behat/mink-goutte-driver": "^1.2",
+        "doctrine/doctrine-fixtures-bundle": "^3.0",
         "symfony/dotenv": "*",
         "symfony/maker-bundle": "^1.6",
         "symfony/phpunit-bridge": "*",
